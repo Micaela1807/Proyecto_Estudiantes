@@ -1,47 +1,35 @@
 import React from 'react';
 
-function BarraNav () {
-    return (
-        <div className="barraNav-container1">
-            <div className="barraNav-container3">
-                <img
-                    alt='estudiante'
-                    src='https://cdn-icons-png.flaticon.com/512/8920/8920554.png'
-                    className="barraNav-image"
-                />
-                <div className="barraNav-container4">
-                    <p className="barraNav-user">Juan Perez</p>
-                    <p className="barraNav-perfil">Estudiante</p>
+class BarraNav extends React.Component {
+    render() {
+        const { userName, userRole, userIcon, menuItems } = this.props;
+
+        return (
+            <div className="barra-lateral">
+                <div className="barra-lateral-header">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8920/8920554.png" alt="Icono del estudiante" className="barra-lateral-icon" />
+                    <div>
+                        <p className="barra-lateral-name">Juan Perez</p>
+                        <p className="barra-lateral-role">Estudiante</p>
+                    </div>
                 </div>
+                <nav className="barra-lateral-menu">
+                    <a className="barra-lateral-item">
+                        Inicio
+                    </a>
+                    <a className="barra-lateral-item">
+                        Seleccionar Ruta
+                    </a>
+                    <a className="barra-lateral-item">
+                        Seleccionar Parada
+                    </a>
+                    <a className="barra-lateral-item">
+                        Ver estado Ruta
+                    </a>
+                </nav>
             </div>
-            
-            <div className="barraNav-container5">
-                <div className='barraNav-container7'>
-                    <button type="button" className="barraNav-inicio">
-                        <span className="barraNav-Inicio-texto">
-                            Inicio
-                        </span>
-                    </button>
-                    <button type="button" className="barraNav-selRuta">
-                        <span className="barraNav-SelRuta-texto">
-                            Seleccionar Ruta
-                        </span>
-                    </button>
-                    <button type="button" className="barraNav-selParada">
-                        <span className="barraNav-SelParada-texto">
-                            Seleccionar Parada
-                        </span>
-                    </button>
-                    <button type="button" className="barraNav-estadoRuta">
-                        <span className="barraNav-EstadoRuta-texto">
-                            Ver estado Ruta
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default BarraNav;
-
